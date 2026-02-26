@@ -1,0 +1,245 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	background: #0B88F0;
+}
+body{
+	margin: 0;
+	font-family: 'Lack';
+	font-style: normal;
+	color: #FFFFFF;
+}
+*::-webkit-scrollbar {
+  width: 0;
+	height: 0;
+}
+header{
+	background: #232323;
+}
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 144px;
+	margin-right: 144px;
+}
+.headersection {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	padding-top: 22px;
+	padding-bottom: 22px;
+}
+.logo {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 124%;
+	display: flex;
+	flex-direction: row;
+}
+.logo a{
+	text-decoration: none;
+	color: #fff;
+}
+.logoru{
+	padding: 3px 17px;
+}
+.ru {
+	border: 2px solid #FFFFFF;
+	border-radius: 378px;
+}
+.line{
+	border: 2 px solid #FFFFFF;
+	margin: 0 !important;
+}
+.section1{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 245px;
+	background: #232323;
+}
+.text{
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 124%;
+	text-align: center;
+}
+.txt1{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 33px;
+}
+.textitem2{
+	padding-left: 28px;
+	padding-right: 28px;
+	padding-top: 14px;
+}
+.txt2{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 26px;
+}
+.textitem3{
+	padding-left: 28px;
+	padding-right: 28px;
+	padding-top: 14px;
+}
+.section2{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-top: 74px;
+	padding-bottom: 308px;
+}
+.word{
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 124%;
+}
+.button{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: #0B88F0;
+	border-radius: 40px;
+	margin-left: 90px;
+	padding: 19px 40px;
+}
+.button a{
+	text-decoration: none;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.btn{
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 124%;
+}
+.arrow img{
+	padding-left: 16px;
+	padding-top: 12px;
+}
+.section3{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 220px;
+	padding-left: 142px;
+}
+.block1{
+	display: flex;
+	flex-direction: column;
+}
+.block-item1{
+	font-weight: 400;
+	font-size: 64px;
+	line-height: 124%;
+	padding-bottom: 46px;
+}
+
+.block-item2{
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 124%;
+}
+.pictures1{
+	padding-top: 214px;
+	padding-right: 142px;
+}
+.section4{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 212px;
+	padding-bottom: 278px;
+}
+.block2{
+	display: flex;
+	flex-direction: column;
+	padding-right: 142px;
+}
+.pictures2 {
+	padding-left: 142px;
+}
+.block-item3 {
+	font-weight: 400;
+	font-size: 64px;
+	line-height: 124%;
+	padding-bottom: 46px;
+}
+.block-item4 {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 124%;
+}
+.section5 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.section6 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.rect {
+	width: 1596px;
+	height: 809px;
+	background: #FFFFFF;
+	border-radius: 30px;
+}
+.tnks {
+	font-weight: 400;
+	font-size: 64px;
+	line-height: 124%;
+	padding-top: 84px;
+	padding-bottom: 214px;
+}
+.ftr{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 142px;
+	padding-right: 142px;
+	align-items: center;
+}
+.footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-top: 65px;
+	padding-bottom: 122px;
+}
+.item1 {
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 124%;
+	padding-right: 145px;
+}
+.item2 {
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 124%;
+}
+.item3 {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 124%;
+}
+a {
+ text-decoration: none; /* Убирает подчеркивание для ссылок */
+ color: white; /* Ссылка красного цвета */
+} 
+a:hover{
+	text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+}

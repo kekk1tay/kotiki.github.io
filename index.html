@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<title>index</title>
+
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="Код итогового фильма.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("84525DB30A5F4A49B109B0424EB0F430");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.installPlugin(createjs.Sound);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.фильм();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+function playSound(id, loop, offset) {
+	return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop, 'offset': offset});}
+</script>
+</head>
+<body onload="init();">
+	<header>
+		<div class="header">
+			<div class="headersection">
+				<div class="logo"><a href="">Городские жильцы</a></div>
+			</div>
+			<div class="headersection">
+				<div class="logo ru">
+					<div class="logoru">
+						<a href="">ru</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<hr class="line">
+	<section>
+		<div class="section1">
+			<div class="text">Сюжет про неуклюжего</div>
+			<div class="text txt1">
+				<div class="textitem1">кота</div>
+				<div class="textitem2"><img src="kot.png" alt=""></div>
+				<div class="textitem1">и мудрого</div>
+			</div>
+			<div class="text txt2">
+				<div class="textitem1">ворона</div>
+				<div class="textitem3"><img src="vorona.png" alt=""></div>
+			</div>
+			<div class="section2">
+				<div class="word">Давайте вместе</div>
+					<div class="button">
+					<a href="#section5">
+						<div class="btn"><a href="#vd">Смотреть</a></div>
+						<div class="arrow"><img src="arrow.png" alt=""></div>
+					</a>
+					</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="section3">
+			<div class="block1">
+				<div class="block-item1">Сам сюжет</div>
+				<div class="block-item2">История рассказывает нам <br>
+					о похождениях беспечного <br>
+					кота, несправедливости, <br>
+					которая может неожиданно <br>
+					повстречать каждого <br>
+					на улице и смелости <br>
+					некоторых прохожих.
+					<br>
+					<br>
+					А также о перевоплощении <br>
+					страхов и неуклюжести <br>
+					в осознанность и стойкость.</div>
+			</div>
+			<div class="pictures1">
+				<img src="perevertish.png" alt="">
+			</div>
+		</div>
+	</section>
+		<section>
+			<div class="section4">
+				<div class="pictures2">
+					<img src="krugkamoloka.png" alt="">
+				</div>
+				<div class="block2">
+					<div class="block-item3">Герои</div>
+					<div class="block-item4">
+						В главных ролях... Неуклюжий <br>
+						кот — кот, <br>
+						смелый ворон — ворон, <br>
+						группировка хулиганов — <br>
+						уличные голуби.
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="section5"><a name="vd"></a>
+					<div id="animation_container" style="width:1596px; height:809px" border-radius=30px;>
+						<canvas id="canvas" width="1596" height="809" style="position: absolute; display: block;"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1596px; height:809px; border-radius:30px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+			</div>
+			<div class="section6">	
+						<div class="tnks">Спасибо за просмотр!</div>
+			</div>
+		</section>
+		<hr class="line">
+	<footer>
+		<div class="ftr">
+			<div class="footer">
+				<div class="item1"><a href="https://vk.com/">Вконтакте</a></div>
+				<div class="item2"><a href="https://web.telegram.org/">Telergram</a></div>
+			</div>
+			<div class="footer">
+				<div class="item3">Автор: Чернова Людмила</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
